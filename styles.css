@@ -1,0 +1,515 @@
+:root {
+  --bg: #faf8f5;
+  --surface: #fffdf9;
+  --surface-2: #f1ecf2;
+  --ink: #1f1b21;
+  --muted: #675f6c;
+  --accent: #532c66;
+  --line: #ddd5df;
+  --max: 1180px;
+  --radius: 20px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 78px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "DM Sans", system-ui, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+.container {
+  width: min(calc(100% - 40px), var(--max));
+  margin-inline: auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250,248,245,.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(221,213,223,.7);
+}
+
+.nav-wrap {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-family: "Source Serif 4", Georgia, serif;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #504753;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.site-nav a:hover { color: var(--accent); }
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  font-size: .74rem;
+  font-weight: 700;
+}
+
+.compact-hero {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  padding: 46px 0;
+}
+
+.compact-hero-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) 320px;
+  gap: 64px;
+  align-items: center;
+}
+
+.compact-hero h1 {
+  margin: 0;
+  font: 700 clamp(3.8rem, 7vw, 6.2rem)/.98 "Source Serif 4", Georgia, serif;
+  letter-spacing: -.04em;
+}
+
+.hero-summary {
+  max-width: 720px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.compact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.compact-links a,
+.inline-link,
+.footer-links a {
+  color: var(--muted);
+  text-underline-offset: 4px;
+}
+
+.compact-links a:hover,
+.inline-link:hover,
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.focus-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 26px;
+}
+
+.focus-line span {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: .76rem;
+  font-weight: 600;
+  color: #5f5364;
+  background: rgba(255,255,255,.5);
+}
+
+.compact-photo-wrap {
+  height: 410px;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: #ebe5e1;
+  box-shadow: 0 18px 50px rgba(55,40,61,.08);
+}
+
+.compact-profile-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 24%;
+}
+
+.compact-section {
+  padding: 64px 0;
+}
+
+.compact-tinted {
+  background: var(--surface-2);
+  border-block: 1px solid #e2dae4;
+}
+
+.compact-section-heading {
+  margin-bottom: 24px;
+}
+
+.compact-section-heading h2 {
+  margin: 0;
+  font: 700 clamp(2rem, 4vw, 3rem)/1.08 "Source Serif 4", Georgia, serif;
+  letter-spacing: -.03em;
+}
+
+.compact-research-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.compact-research-grid article {
+  padding: 20px;
+  border: 1px solid rgba(105,82,112,.14);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.55);
+}
+
+.compact-research-grid h3,
+.work-item h3,
+.compact-pubs h3,
+.compact-experience h3,
+.compact-mentoring h3,
+.compact-skills h3 {
+  margin: 0 0 7px;
+  line-height: 1.25;
+}
+
+.compact-research-grid h3 {
+  font-size: 1rem;
+}
+
+.compact-research-grid p,
+.work-item p,
+.compact-experience p,
+.compact-mentoring p,
+.compact-skills p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+.selected-work {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.work-item {
+  padding: 20px 22px;
+  border: 1px solid rgba(105,82,112,.14);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.work-type,
+.compact-pubs span,
+.compact-experience span {
+  color: var(--accent);
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 700;
+}
+
+.work-item h3 {
+  margin-top: 6px;
+  font-size: 1.08rem;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 64px;
+}
+
+.compact-pubs,
+.compact-experience {
+  border-top: 1px solid var(--line);
+}
+
+.compact-pubs article,
+.compact-experience article {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.compact-pubs h3 {
+  margin-top: 4px;
+  font-size: .98rem;
+  font-weight: 600;
+}
+
+.compact-experience h3 {
+  margin-top: 4px;
+  font-size: .98rem;
+}
+
+.inline-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: .88rem;
+  font-weight: 600;
+}
+
+.compact-mentoring,
+.compact-skills {
+  margin-top: 18px;
+}
+
+.compact-mentoring h3,
+.compact-skills h3 {
+  font-size: .9rem;
+}
+
+.compact-footer {
+  margin-top: 44px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+.compact-footer > div:first-child {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .compact-hero {
+    min-height: auto;
+    padding: 52px 0 60px;
+  }
+
+  .compact-hero-grid,
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compact-hero-grid {
+    gap: 30px;
+  }
+
+  .compact-photo-wrap {
+    width: min(100%, 350px);
+    height: 420px;
+  }
+
+  .compact-research-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-grid {
+    gap: 42px;
+  }
+}
+
+@media (max-width: 620px) {
+  .container {
+    width: min(calc(100% - 28px), var(--max));
+  }
+
+  .brand-name {
+    display: none;
+  }
+
+  .site-nav {
+    gap: 15px;
+  }
+
+  .site-nav a {
+    font-size: .82rem;
+  }
+
+  .compact-hero h1 {
+    font-size: clamp(3.2rem, 16vw, 4.4rem);
+  }
+
+  .compact-photo-wrap {
+    width: 100%;
+    max-width: 330px;
+    height: 390px;
+  }
+
+  .compact-research-grid,
+  .selected-work {
+    grid-template-columns: 1fr;
+  }
+
+  .compact-section {
+    padding: 52px 0;
+  }
+
+  .compact-footer {
+    flex-direction: column;
+  }
+}
+
+
+/* Teaching & mentoring — compact third-screen treatment */
+.teaching-list {
+  border-top: 1px solid var(--line);
+}
+
+.teaching-list article {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.teaching-list span {
+  color: var(--accent);
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 700;
+}
+
+.teaching-list h3 {
+  margin: 4px 0 5px;
+  font-size: .98rem;
+  line-height: 1.25;
+}
+
+.teaching-list p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .86rem;
+  line-height: 1.48;
+}
+
+.mentoring-box {
+  margin-top: 16px;
+  padding: 15px 17px;
+  background: rgba(83, 44, 102, .045);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+}
+
+.mentoring-box h3 {
+  margin: 0 0 5px;
+  font-size: .9rem;
+}
+
+.mentoring-box p,
+.compact-experience-summary p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.48;
+}
+
+.compact-experience-summary {
+  margin-top: 14px;
+}
+
+
+#profile.compact-section {
+  padding-top: 56px;
+  padding-bottom: 48px;
+}
+
+#profile .compact-section-heading {
+  margin-bottom: 20px;
+}
+
+#profile .compact-pubs article {
+  padding: 12px 0;
+}
+
+#profile .compact-footer {
+  margin-top: 34px;
+}
+
+
+/* Tighter hero composition on desktop */
+.compact-hero-grid {
+  max-width: 1040px;
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 34px;
+}
+
+.compact-hero-copy {
+  max-width: 670px;
+}
+
+.compact-photo-wrap {
+  width: 310px;
+  height: 400px;
+  justify-self: end;
+}
+
+@media (max-width: 900px) {
+  .compact-hero-grid {
+    max-width: none;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .compact-hero-copy {
+    max-width: none;
+  }
+
+  .compact-photo-wrap {
+    width: min(100%, 350px);
+    height: 420px;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 620px) {
+  .compact-photo-wrap {
+    width: 100%;
+    max-width: 330px;
+    height: 390px;
+  }
+}
